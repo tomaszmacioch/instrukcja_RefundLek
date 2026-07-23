@@ -44,7 +44,7 @@
 
   nav.toc{
     background:var(--surface);border:1px solid var(--line);border-radius:14px;
-    box-shadow:var(--shadow);padding:18px 22px;margin-top:-22px;position:relative;z-index:2;
+    box-shadow:var(--shadow);padding:18px 22px;position:relative;z-index:2;
   }
   nav.toc .lbl{font-size:11.5px;font-weight:700;color:var(--ink-soft);text-transform:uppercase;
     letter-spacing:.08em;margin:0 0 10px}
@@ -127,6 +127,26 @@
   footer{margin-top:44px;font-size:12px;color:#8593a1;text-align:center;line-height:1.8}
   footer a{color:var(--petrol);text-decoration:none;font-weight:600}
   footer a:hover{text-decoration:underline}
+
+  .hero{
+    background:linear-gradient(160deg,var(--surface),var(--teal-bg));
+    border:1px solid #bfe0d9;border-radius:14px;box-shadow:var(--shadow);
+    padding:26px 26px 22px;margin-top:-22px;margin-bottom:28px;position:relative;z-index:2;
+  }
+  .hero p.intro{font-size:15.5px;color:var(--ink);margin:0 0 16px;line-height:1.65}
+  .hero p.intro strong{color:var(--petrol)}
+  .hero .platforms{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 18px}
+  .hero .platforms span{font-size:12px;font-weight:700;color:var(--petrol);background:#fff;
+    border:1px solid #bfe0d9;padding:4px 12px;border-radius:999px}
+  .hero .flbl{font-size:11.5px;font-weight:700;color:var(--teal);text-transform:uppercase;
+    letter-spacing:.06em;margin:0 0 10px}
+  .hero ul.features{list-style:none;padding:0;margin:0;display:grid;
+    grid-template-columns:1fr 1fr;gap:10px 20px}
+  .hero ul.features li{font-size:14px;color:var(--ink);display:flex;gap:9px;align-items:flex-start}
+  .hero ul.features li::before{content:"✓";color:#0c5a3f;font-weight:700;flex-shrink:0;
+    width:20px;height:20px;border-radius:50%;background:#e7f5ee;
+    display:flex;align-items:center;justify-content:center;font-size:11px;margin-top:1px}
+  @media(max-width:560px){.hero ul.features{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -139,6 +159,30 @@
 </header>
 
 <div class="wrap">
+  <div class="hero">
+    <p class="intro">
+      <strong>RefundLek</strong> pozwala szybko sprawdzić, czy lek jest refundowany, ile wynosi
+      dopłata pacjenta i czy istnieje refundowany odpowiednik. Działa na Androidzie i iOS,
+      nie wymaga rejestracji i może działać offline.
+    </p>
+    <div class="platforms">
+      <span>📱 Android</span>
+      <span>📱 iOS</span>
+      <span>🔒 Bez rejestracji</span>
+      <span>📶 Działa offline</span>
+    </div>
+    <p class="flbl">Najsilniejsze wyróżniki aplikacji</p>
+    <ul class="features">
+      <li>Wyszukiwanie po nazwie handlowej i substancji czynnej</li>
+      <li>Pokazanie dopłaty pacjenta</li>
+      <li>Informacje o lekach bezpłatnych dla dzieci, seniorów i kobiet w ciąży</li>
+      <li>Wskazania objęte refundacją</li>
+      <li>Podpowiadanie refundowanych produktów z tą samą substancją</li>
+      <li>Brak rejestracji i brak zbierania danych osobowych</li>
+      <li>Działanie offline po pobraniu bazy</li>
+    </ul>
+  </div>
+
   <nav class="toc">
     <p class="lbl">Spis treści</p>
     <ol>
@@ -273,6 +317,16 @@
 
       <h3>Rozwijane szczegóły wskazań</h3>
       <p>Pola <strong>„Zakres wskazań objętych refundacją"</strong> i <strong>„Wskazania pozarejestracyjne objęte refundacją"</strong> bywają bardzo długie (listy kodów ICD-10, szczegółowe opisy). Dlatego są domyślnie zwinięte — dotknij nagłówka pola, żeby rozwinąć pełną treść.</p>
+
+      <h3>Podgląd Charakterystyki Produktu Leczniczego (ChPL)</h3>
+      <p>Przy kartach leków, dla których dokument jest dostępny, znajduje się przycisk <strong>„Zobacz charakterystykę produktu (ChPL)"</strong>. Dotknięcie go otwiera oficjalny dokument ChPL wprost w aplikacji, w dedykowanym podglądzie PDF — bez przechodzenia do przeglądarki i bez zapisywania pliku na stałe w telefonie (dokument jest automatycznie usuwany po zamknięciu podglądu).</p>
+      <div class="warn">
+        <b>Ta funkcja wymaga połączenia z internetem</b>
+        Podgląd ChPL działa <strong>wyłącznie online</strong> — dokument jest pobierany dopiero
+        w chwili dotknięcia przycisku. W odróżnieniu od reszty aplikacji (wyszukiwarka działa
+        offline po wcześniejszym pobraniu bazy danych), bez połączenia z internetem podgląd
+        ChPL się nie otworzy.
+      </div>
     </div>
   </section>
 
