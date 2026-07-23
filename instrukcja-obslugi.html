@@ -100,6 +100,13 @@
     padding:8px 12px;font-size:13.5px;display:flex;justify-content:space-between;gap:10px}
   .sort-list .desc{color:var(--ink-soft);font-size:12.5px;text-align:right}
 
+  .toggle-demo-row{display:flex;align-items:center;gap:11px;margin:14px 0}
+  .toggle-demo{position:relative;display:inline-block;width:38px;height:22px;flex-shrink:0}
+  .toggle-demo .track{position:absolute;inset:0;border-radius:999px;background:var(--teal)}
+  .toggle-demo .knob{position:absolute;top:3px;left:18px;width:16px;height:16px;border-radius:50%;
+    background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.2)}
+  .toggle-demo-label{font-size:13.5px;font-weight:600;color:var(--ink)}
+
   table.legend-table{width:100%;border-collapse:collapse;margin:14px 0;font-size:13.5px}
   table.legend-table th{text-align:left;padding:8px 10px;background:#fafbfc;color:var(--ink-soft);
     font-size:11.5px;text-transform:uppercase;letter-spacing:.03em;border-bottom:2px solid var(--line)}
@@ -182,6 +189,13 @@
 
       <h3>Bez rozróżniania wielkości liter i polskich znaków</h3>
       <p>Wyszukiwarka ignoruje wielkość liter oraz polskie znaki diakrytyczne — wpisanie „lek" znajdzie też „Lek" czy nazwy z „ł", „ą" itd. bez potrzeby ich wpisywania.</p>
+
+      <h3>Dwa sposoby potwierdzenia wyszukiwania</h3>
+      <p>W każdym polu, po prawej stronie, znajduje się mała ikona lupki. Masz do wyboru dwa sposoby wyszukania leku:</p>
+      <ul>
+        <li><strong>Wybór z listy podpowiedzi</strong> — dotknij pasującej pozycji na liście, która pojawia się pod polem w trakcie pisania (szczegóły w kolejnej sekcji).</li>
+        <li><strong>Przycisk lupki</strong> — wpisz nazwę (nawet niepełną) i dotknij ikony lupki w polu. Klawiatura ekranowa zamknie się automatycznie, a poniżej od razu zobaczysz wyniki — bez konieczności wybierania konkretnej podpowiedzi.</li>
+      </ul>
     </div>
   </section>
 
@@ -206,7 +220,6 @@
         <li>Dopłata: od najniższej <span class="desc">domyślne — najtańsze na górze</span></li>
         <li>Dopłata: od najwyższej <span class="desc">najdroższe na górze</span></li>
         <li>Nazwa leku (A–Z) <span class="desc">porządek alfabetyczny</span></li>
-        <li>Leki refundowane <span class="desc">tylko z obwieszczenia MZ</span></li>
         <li>Dzieci do 18 r.ż. (DZ) <span class="desc">wykaz D1</span></li>
         <li>Seniorzy od 65 r.ż. (S) <span class="desc">wykaz D2</span></li>
         <li>Kobiety w ciąży (C) <span class="desc">wykaz E</span></li>
@@ -216,6 +229,14 @@
         <b>Przykład zastosowania</b>
         Wybierz „Dzieci do 18 r.ż. (DZ)" bez wpisywania niczego w pola wyszukiwania, aby zobaczyć pełną listę leków bezpłatnych dla tej grupy pacjentów.
       </div>
+
+      <h3>Przełącznik: pokaż tylko leki refundowane</h3>
+      <p>Nad polem sortowania znajduje się osobny przełącznik:</p>
+      <div class="toggle-demo-row">
+        <span class="toggle-demo"><span class="track"></span><span class="knob"></span></span>
+        <span class="toggle-demo-label">Pokaż tylko leki refundowane</span>
+      </div>
+      <p>W odróżnieniu od opcji sortowania, ten przełącznik <strong>utrzymuje swój stan</strong> — raz włączony, ogranicza wyniki do leków znajdujących się na liście obwieszczenia refundacyjnego niezależnie od tego, co wpiszesz w pola wyszukiwania czy jak posortujesz wyniki, dopóki go nie wyłączysz. Możesz go łączyć z sortowaniem — np. włączyć przełącznik i dodatkowo wybrać sortowanie po dopłacie.</p>
     </div>
   </section>
 
@@ -265,10 +286,10 @@
         Zielone pole „Informacja" pod nagłówkiem karty wyjaśnia dodatkowo status leku:
         <ul style="margin-top:8px">
           <li><strong>Lek nierefundowany</strong> — dane z RPL, pozwolenie na dopuszczenie do obrotu jest ważne.</li>
-          <li><strong>Pozwolenie wygasło</strong> — dostępność leku warto zweryfikować bezpośrednio w aptece.</li>
           <li><strong>Status refundacji nieznany</strong> — rejestr nie zawiera danych o opakowaniu tego produktu, więc nie da się jednoznacznie potwierdzić statusu.</li>
         </ul>
       </div>
+      <p>Leki, których pozwolenie na dopuszczenie do obrotu wygasło, <strong>nie pojawiają się w wynikach wyszukiwania w ogóle</strong> — zostały celowo pominięte, ponieważ mogły przestać być legalnie dostępne w aptekach.</p>
 
       <h3>Podpowiedź refundowanych zamienników</h3>
       <p>Jeśli oglądany lek nie jest refundowany, ale jego substancja czynna występuje w innym, refundowanym produkcie (np. od innego producenta), pod informacją o statusie pojawi się niebiesko-zielone pole z listą takich zamienników — z gotową podpowiedzią, czego szukać zamiast wybranego leku.</p>
@@ -291,6 +312,7 @@
     <h2><span class="num">08</span> Pomoc i zgłaszanie błędów</h2>
     <div class="panel">
       <p>Napotkałeś błąd w działaniu aplikacji albo w danych o konkretnym leku? Skorzystaj z przycisku <strong>„Pomoc"</strong> w prawym górnym rogu aplikacji — przeniesie Cię on do strony wsparcia, gdzie znajdziesz najczęstsze pytania oraz formularz kontaktowy.</p>
+      <p>Obok przycisku „Pomoc" znajduje się też ikona <strong>„Instrukcja"</strong> — prowadzi bezpośrednio do tego podręcznika, więc zawsze masz go pod ręką w aplikacji.</p>
       <p>Informacje o tym, jakie dane aplikacja przetwarza (i że nie zbiera żadnych danych osobowych), znajdziesz w Polityce prywatności, dostępnej w stopce ekranu głównego.</p>
     </div>
     <a href="#" class="backtotop" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">↑ Powrót na górę</a>
