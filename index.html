@@ -30,21 +30,41 @@
     background:var(--bg);color:var(--ink);
     line-height:1.6;-webkit-font-smoothing:antialiased;
   }
-  .wrap{max-width:820px;margin:0 auto;padding:0 20px 90px}
+  .wrap{max-width:840px;margin:0 auto;padding:0 20px 90px}
 
   header.top{
     background:linear-gradient(160deg,var(--petrol),var(--petrol-dk));
     color:#fff;padding:40px 0 34px;border-bottom:3px solid var(--teal);
   }
   header.top .wrap{padding-bottom:0}
-  .eyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase;
+  .eyebrow{font-size:12px;letter-spacing:.12em;text-transform:uppercase;
     color:#8fd3c9;font-weight:600;margin:0 0 8px}
   h1{font-size:clamp(26px,4.5vw,36px);font-weight:700;margin:0;letter-spacing:-.01em}
-  header.top p{margin:12px 0 0;color:#cfe4e6;max-width:60ch;font-size:15px}
+  header.top p{margin:12px 0 0;color:#cfe4e6;max-width:62ch;font-size:15px}
+
+  .hero{
+    background:linear-gradient(160deg,var(--surface),var(--teal-bg));
+    border:1px solid #bfe0d9;border-radius:14px;box-shadow:var(--shadow);
+    padding:26px 26px 22px;margin-top:-22px;margin-bottom:28px;position:relative;z-index:2;
+  }
+  .hero p.intro{font-size:15.5px;color:var(--ink);margin:0 0 16px;line-height:1.65}
+  .hero p.intro strong{color:var(--petrol)}
+  .hero .platforms{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 18px}
+  .hero .platforms span{font-size:12px;font-weight:700;color:var(--petrol);background:#fff;
+    border:1px solid #bfe0d9;padding:4px 12px;border-radius:999px}
+  .hero .flbl{font-size:11.5px;font-weight:700;color:var(--teal);text-transform:uppercase;
+    letter-spacing:.06em;margin:0 0 10px}
+  .hero ul.features{list-style:none;padding:0;margin:0;display:grid;
+    grid-template-columns:1fr 1fr;gap:10px 20px}
+  .hero ul.features li{font-size:14px;color:var(--ink);display:flex;gap:9px;align-items:flex-start}
+  .hero ul.features li::before{content:"✓";color:#0c5a3f;font-weight:700;flex-shrink:0;
+    width:20px;height:20px;border-radius:50%;background:#e7f5ee;
+    display:flex;align-items:center;justify-content:center;font-size:11px;margin-top:1px}
+  @media(max-width:560px){.hero ul.features{grid-template-columns:1fr}}
 
   nav.toc{
     background:var(--surface);border:1px solid var(--line);border-radius:14px;
-    box-shadow:var(--shadow);padding:18px 22px;position:relative;z-index:2;
+    box-shadow:var(--shadow);padding:18px 22px;
   }
   nav.toc .lbl{font-size:11.5px;font-weight:700;color:var(--ink-soft);text-transform:uppercase;
     letter-spacing:.08em;margin:0 0 10px}
@@ -55,10 +75,9 @@
   @media(max-width:560px){nav.toc ol{columns:1}}
 
   section{margin-top:36px;scroll-margin-top:20px}
-  h2{font-size:21px;font-weight:700;color:var(--ink);margin:0 0 6px;letter-spacing:-.005em;
+  h2{font-size:21px;font-weight:700;color:var(--ink);margin:0 0 14px;letter-spacing:-.005em;
     display:flex;align-items:baseline;gap:10px}
   h2 .num{color:var(--teal);font-family:"IBM Plex Mono",monospace;font-size:16px;font-weight:600}
-  .lead{color:var(--ink-soft);font-size:14.5px;margin:0 0 18px}
   h3{font-size:15.5px;font-weight:700;color:var(--ink);margin:22px 0 8px}
   p{font-size:14.5px;color:var(--ink);margin:0 0 12px}
   ul,ol{font-size:14.5px;color:var(--ink);padding-left:22px;margin:0 0 14px}
@@ -95,6 +114,7 @@
   .chip-demo.on::before{content:"✓";font-weight:700}
   .chip-demo.off{color:#9aa7b3}
   .chip-demo.off::before{content:"–"}
+
   .sort-list{list-style:none;padding:0;margin:12px 0;display:flex;flex-direction:column;gap:6px}
   .sort-list li{background:#fafbfc;border:1px solid var(--line);border-radius:8px;
     padding:8px 12px;font-size:13.5px;display:flex;justify-content:space-between;gap:10px}
@@ -106,6 +126,14 @@
   .toggle-demo .knob{position:absolute;top:3px;left:18px;width:16px;height:16px;border-radius:50%;
     background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.2)}
   .toggle-demo-label{font-size:13.5px;font-weight:600;color:var(--ink)}
+
+  /* Odwzorowanie trzech zakładek kategorii */
+  .tabs-demo{display:flex;gap:8px;margin:14px 0}
+  .tab-demo{flex:1 1 0;min-width:0;background:var(--surface);border:1px solid var(--line);
+    border-radius:12px;padding:12px 6px 11px;display:flex;flex-direction:column;
+    align-items:center;gap:6px;text-align:center;line-height:1.2;
+    font-size:12.5px;font-weight:600;color:var(--ink-soft)}
+  .tab-demo.active{background:var(--petrol);border-color:var(--petrol);color:#fff}
 
   table.legend-table{width:100%;border-collapse:collapse;margin:14px 0;font-size:13.5px}
   table.legend-table th{text-align:left;padding:8px 10px;background:#fafbfc;color:var(--ink-soft);
@@ -127,34 +155,14 @@
   footer{margin-top:44px;font-size:12px;color:#8593a1;text-align:center;line-height:1.8}
   footer a{color:var(--petrol);text-decoration:none;font-weight:600}
   footer a:hover{text-decoration:underline}
-
-  .hero{
-    background:linear-gradient(160deg,var(--surface),var(--teal-bg));
-    border:1px solid #bfe0d9;border-radius:14px;box-shadow:var(--shadow);
-    padding:26px 26px 22px;margin-top:-22px;margin-bottom:28px;position:relative;z-index:2;
-  }
-  .hero p.intro{font-size:15.5px;color:var(--ink);margin:0 0 16px;line-height:1.65}
-  .hero p.intro strong{color:var(--petrol)}
-  .hero .platforms{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 18px}
-  .hero .platforms span{font-size:12px;font-weight:700;color:var(--petrol);background:#fff;
-    border:1px solid #bfe0d9;padding:4px 12px;border-radius:999px}
-  .hero .flbl{font-size:11.5px;font-weight:700;color:var(--teal);text-transform:uppercase;
-    letter-spacing:.06em;margin:0 0 10px}
-  .hero ul.features{list-style:none;padding:0;margin:0;display:grid;
-    grid-template-columns:1fr 1fr;gap:10px 20px}
-  .hero ul.features li{font-size:14px;color:var(--ink);display:flex;gap:9px;align-items:flex-start}
-  .hero ul.features li::before{content:"✓";color:#0c5a3f;font-weight:700;flex-shrink:0;
-    width:20px;height:20px;border-radius:50%;background:#e7f5ee;
-    display:flex;align-items:center;justify-content:center;font-size:11px;margin-top:1px}
-  @media(max-width:560px){.hero ul.features{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 <header class="top">
   <div class="wrap">
-    <p class="eyebrow">RefundLek · Wyszukiwarka leków refundowanych</p>
+    <p class="eyebrow">RefundLek · Wyszukiwarka wykazu refundacyjnego</p>
     <h1>Instrukcja obsługi</h1>
-    <p>Pełny przewodnik po funkcjach aplikacji — jak szukać leków, jak czytać wyniki i co oznaczają poszczególne oznaczenia.</p>
+    <p>Pełny przewodnik po funkcjach aplikacji — jak szukać leków, środków spożywczych i wyrobów medycznych, jak czytać wyniki i co oznaczają poszczególne oznaczenia.</p>
   </div>
 </header>
 
@@ -173,11 +181,13 @@
     </div>
     <p class="flbl">Najsilniejsze wyróżniki aplikacji</p>
     <ul class="features">
+      <li>Trzy kategorie: leki, środki spożywcze i wyroby medyczne</li>
       <li>Wyszukiwanie po nazwie handlowej i substancji czynnej</li>
       <li>Pokazanie dopłaty pacjenta</li>
       <li>Informacje o lekach bezpłatnych dla dzieci, seniorów i kobiet w ciąży</li>
       <li>Wskazania objęte refundacją</li>
       <li>Podpowiadanie refundowanych produktów z tą samą substancją</li>
+      <li>Podgląd Charakterystyki Produktu Leczniczego (ChPL) w aplikacji</li>
       <li>Brak rejestracji i brak zbierania danych osobowych</li>
       <li>Działanie offline po pobraniu bazy</li>
     </ul>
@@ -187,11 +197,14 @@
     <p class="lbl">Spis treści</p>
     <ol>
       <li><a href="#czym-jest">Czym jest RefundLek</a></li>
-      <li><a href="#wyszukiwanie">Wyszukiwanie leku</a></li>
+      <li><a href="#kategorie">Trzy kategorie wyszukiwania</a></li>
+      <li><a href="#leki">Wyszukiwanie leków</a></li>
+      <li><a href="#srodki-wyroby">Środki spożywcze i wyroby medyczne</a></li>
       <li><a href="#podpowiedzi">Podpowiedzi w trakcie pisania</a></li>
       <li><a href="#sortowanie">Sortowanie i filtrowanie wyników</a></li>
       <li><a href="#karta-wyniku">Jak czytać kartę wyniku</a></li>
       <li><a href="#nierefundowane">Leki nierefundowane i zamienniki</a></li>
+      <li><a href="#chpl">Charakterystyka produktu (ChPL)</a></li>
       <li><a href="#aktualizacje">Aktualizacja danych i praca offline</a></li>
       <li><a href="#pomoc">Pomoc i zgłaszanie błędów</a></li>
     </ol>
@@ -200,9 +213,9 @@
   <section id="czym-jest">
     <h2><span class="num">01</span> Czym jest RefundLek</h2>
     <div class="panel">
-      <p>RefundLek to narzędzie do szybkiego sprawdzania, czy dany lek jest refundowany w Polsce, ile wynosi dopłata pacjenta oraz jakie wskazania są objęte refundacją. Dane pochodzą z dwóch oficjalnych źródeł:</p>
+      <p>RefundLek to narzędzie do szybkiego sprawdzania, co jest refundowane w Polsce, ile wynosi dopłata pacjenta oraz jakie wskazania są objęte refundacją. Dane pochodzą z dwóch oficjalnych źródeł:</p>
       <ul>
-        <li><strong>Obwieszczenie Ministra Zdrowia</strong> w sprawie wykazu leków refundowanych — aktualizowane co kwartał.</li>
+        <li><strong>Obwieszczenie Ministra Zdrowia</strong> w sprawie wykazu refundowanych leków, środków spożywczych specjalnego przeznaczenia żywieniowego oraz wyrobów medycznych — aktualizowane co kwartał. Datę obwieszczenia, na którym oparta jest baza, widzisz w nagłówku aplikacji.</li>
         <li><strong>Rejestr Produktów Leczniczych (RPL)</strong> — rejestr wszystkich leków dopuszczonych do obrotu w Polsce, dzięki któremu aplikacja rozpoznaje też leki <strong>nierefundowane</strong>, zamiast pokazywać przy nich brak wyników.</li>
       </ul>
       <div class="tip">
@@ -212,10 +225,44 @@
     </div>
   </section>
 
-  <section id="wyszukiwanie">
-    <h2><span class="num">02</span> Wyszukiwanie leku</h2>
+  <section id="kategorie">
+    <h2><span class="num">02</span> Trzy kategorie wyszukiwania</h2>
     <div class="panel">
-      <p>Na ekranie głównym znajdują się dwa pola wyszukiwania:</p>
+      <p>Pod nagłówkiem aplikacji znajdują się trzy zakładki. Każda przeszukuje inny wykaz i ma <strong>własny sposób wyszukiwania</strong> — dopasowany do tego, jak nazywane są produkty w danej kategorii:</p>
+
+      <div class="tabs-demo">
+        <div class="tab-demo active">Leki</div>
+        <div class="tab-demo">Środki spożywcze</div>
+        <div class="tab-demo">Wyroby medyczne</div>
+      </div>
+
+      <table class="legend-table">
+        <tr><th>Zakładka</th><th>Zawartość</th><th>Jak szukać</th></tr>
+        <tr>
+          <td><strong>Leki</strong></td>
+          <td>Leki refundowane (wykaz A1) oraz — dla porównania — leki nierefundowane z RPL</td>
+          <td>Nazwa międzynarodowa albo handlowa, od pierwszych liter</td>
+        </tr>
+        <tr>
+          <td><strong>Środki spożywcze</strong></td>
+          <td>Środki spożywcze specjalnego przeznaczenia żywieniowego (wykaz A2), np. diety</td>
+          <td>Nazwa handlowa albo grupa limitowa, dowolny fragment</td>
+        </tr>
+        <tr>
+          <td><strong>Wyroby medyczne</strong></td>
+          <td>Wyroby medyczne (wykaz A3), np. opatrunki, paski, pieluchomajtki</td>
+          <td>Nazwa handlowa albo grupa limitowa, dowolny fragment</td>
+        </tr>
+      </table>
+
+      <p>Przełączenie zakładki czyści pola wyszukiwania — kryteria nie przenoszą się między kategoriami.</p>
+    </div>
+  </section>
+
+  <section id="leki">
+    <h2><span class="num">03</span> Wyszukiwanie leków</h2>
+    <div class="panel">
+      <p>W zakładce <strong>Leki</strong> dostępne są dwa pola:</p>
       <ul>
         <li><strong>Nazwa międzynarodowa</strong> — substancja czynna, np. <code>Metforminum</code>, <code>Acarbosum</code>.</li>
         <li><strong>Nazwa handlowa</strong> — nazwa produktu wraz z postacią i dawką, np. <code>Adeksa, tabl., 100 mg</code>.</li>
@@ -225,81 +272,115 @@
       <p>Wpisanie tekstu w jedno pole automatycznie czyści drugie — wyszukujesz zawsze tylko po jednym kryterium naraz. Dzięki temu unikasz sytuacji, w której zapomniane wcześniejsze zapytanie w drugim polu zawęża wyniki w niezrozumiały sposób.</p>
 
       <h3>Wyszukiwanie działa od pierwszej litery</h3>
-      <p>Wpisany tekst musi być <strong>początkiem</strong> nazwy, a nie dowolnym jej fragmentem. Przykład: wpisanie <code>acar</code> znajdzie <code>Acarbosum</code>, ale nie znajdzie substancji, w których „acar" pojawia się w środku nazwy.</p>
+      <p>W tej kategorii wpisany tekst musi być <strong>początkiem</strong> nazwy, a nie dowolnym jej fragmentem. Przykład: wpisanie <code>acar</code> znajdzie <code>Acarbosum</code>, ale nie znajdzie substancji, w których „acar" pojawia się w środku nazwy.</p>
       <div class="tip">
         <b>Podpowiedź</b>
-        Jeśli nie masz pewności co do pisowni, zacznij od kilku pierwszych liter — pole podpowiedzi (opisane niżej) pokaże pasujące nazwy.
+        Jeśli nie masz pewności co do pisowni, zacznij od kilku pierwszych liter — lista podpowiedzi pokaże pasujące nazwy.
       </div>
 
+      <h3>Powrót do pola czyści poprzednie zapytanie</h3>
+      <p>Gdy dotkniesz pola, w którym jest już wpisana wcześniejsza fraza, pole automatycznie się wyczyści — możesz od razu wpisywać nową nazwę, bez ręcznego kasowania.</p>
+
       <h3>Bez rozróżniania wielkości liter i polskich znaków</h3>
-      <p>Wyszukiwarka ignoruje wielkość liter oraz polskie znaki diakrytyczne — wpisanie „lek" znajdzie też „Lek" czy nazwy z „ł", „ą" itd. bez potrzeby ich wpisywania.</p>
+      <p>Wyszukiwarka ignoruje wielkość liter oraz polskie znaki diakrytyczne — wpisanie „lek" znajdzie też „Lek" czy nazwy z „ł", „ą" itd. bez potrzeby ich wpisywania. Dotyczy to wszystkich trzech kategorii.</p>
 
       <h3>Dwa sposoby potwierdzenia wyszukiwania</h3>
-      <p>W każdym polu, po prawej stronie, znajduje się mała ikona lupki. Masz do wyboru dwa sposoby wyszukania leku:</p>
+      <p>W każdym polu, po prawej stronie, znajduje się mała ikona lupki. Masz do wyboru dwa sposoby:</p>
       <ul>
-        <li><strong>Wybór z listy podpowiedzi</strong> — dotknij pasującej pozycji na liście, która pojawia się pod polem w trakcie pisania (szczegóły w kolejnej sekcji).</li>
-        <li><strong>Przycisk lupki</strong> — wpisz nazwę (nawet niepełną) i dotknij ikony lupki w polu. Klawiatura ekranowa zamknie się automatycznie, a poniżej od razu zobaczysz wyniki — bez konieczności wybierania konkretnej podpowiedzi.</li>
+        <li><strong>Wybór z listy podpowiedzi</strong> — dotknij pasującej pozycji na liście, która pojawia się pod polem w trakcie pisania.</li>
+        <li><strong>Przycisk lupki</strong> — wpisz nazwę (nawet niepełną) i dotknij ikony lupki. Klawiatura ekranowa zamknie się automatycznie, a poniżej od razu zobaczysz wyniki — bez konieczności wybierania konkretnej podpowiedzi.</li>
       </ul>
+    </div>
+  </section>
+
+  <section id="srodki-wyroby">
+    <h2><span class="num">04</span> Środki spożywcze i wyroby medyczne</h2>
+    <div class="panel">
+      <p>Zakładki <strong>Środki spożywcze</strong> i <strong>Wyroby medyczne</strong> działają inaczej niż zakładka leków — zestaw pól jest dopasowany do tego, jak nazywane są produkty w tych wykazach.</p>
+
+      <h3>Wyszukiwanie tylko po nazwie handlowej</h3>
+      <p>Nie ma tu pola nazwy międzynarodowej. W tych kategoriach nazwa substancji jest zwykle mało czytelna i nieinformatywna (np. długi opis składu), więc szukanie po niej nie byłoby praktyczne.</p>
+
+      <h3>Dopasowanie po dowolnym fragmencie nazwy</h3>
+      <p>W odróżnieniu od leków, tutaj wystarczy <strong>dowolny fragment</strong> nazwy — niekoniecznie jej początek. Nazwy w tych wykazach są opisowe (często zaczynają się od nazwy producenta albo typu produktu), więc szukanie „od pierwszych liter" byłoby uciążliwe.</p>
+      <div class="tip">
+        <b>Przykład różnicy</b>
+        Fragment „sorb" w wyrobach medycznych znajduje <strong>około 100 pozycji</strong> (m.in. <em>Sorbalgon</em>, ale też produkty, w których „sorb" występuje w środku nazwy). Gdyby działało dopasowanie od początku nazwy — jak w lekach — znalazłoby zaledwie kilka.
+      </div>
+
+      <h3>Nowe pole: grupa limitowa</h3>
+      <p>Drugie pole pozwala szukać po <strong>nazwie grupy limitowej</strong> — bez wpisywania jej numeru. Przykładowo wpisanie <code>alginian</code> pokaże wszystkie produkty z grupy „Opatrunki do ran z wysiękiem — opatrunki alginianowe". To wygodny sposób przeglądania całych kategorii wyrobów albo diet.</p>
+      <p>Do wyboru jest 31 grup w środkach spożywczych i 33 grupy w wyrobach medycznych; podpowiedzi działają tak samo, po dowolnym fragmencie nazwy.</p>
+
+      <h3>Oba pola można łączyć</h3>
+      <p>W odróżnieniu od zakładki leków, te dwa pola <strong>nie wykluczają się</strong> — możesz zawęzić wyniki jednocześnie po grupie i po nazwie. Na przykład grupa „alginianowe" plus nazwa „sorbalgon" pokaże tylko opatrunki Sorbalgon z tej grupy.</p>
+
+      <div class="warn">
+        <b>Czego tu nie ma</b>
+        W tych dwóch kategoriach nie ma przycisku ChPL (charakterystyki dotyczą leków, nie wyrobów ani diet), nie ma podpowiedzi zamienników, ani oznaczeń bezpłatności dla dzieci, seniorów i kobiet w ciąży — produkty z tych wykazów nie występują w odpowiednich wykazach D1/D2/E. Dane pochodzą wyłącznie z obwieszczenia Ministra Zdrowia.
+      </div>
     </div>
   </section>
 
   <section id="podpowiedzi">
-    <h2><span class="num">03</span> Podpowiedzi w trakcie pisania</h2>
+    <h2><span class="num">05</span> Podpowiedzi w trakcie pisania</h2>
     <div class="panel">
       <p>W trakcie wpisywania tekstu pod polem pojawia się lista pasujących nazw do wyboru:</p>
       <ul>
-        <li><strong>Nazwa międzynarodowa</strong> — do 8 podpowiedzi.</li>
+        <li><strong>Nazwa międzynarodowa</strong> (leki) — do 8 podpowiedzi.</li>
         <li><strong>Nazwa handlowa</strong> — do 30 podpowiedzi (lista jest przewijalna).</li>
+        <li><strong>Grupa limitowa</strong> — do 30 podpowiedzi.</li>
       </ul>
       <p>Dotknij dowolnej pozycji na liście, aby ją wybrać — pole wypełni się automatycznie, lista podpowiedzi zniknie, a klawiatura ekranowa zamknie się sama, żeby od razu było widać wyniki.</p>
+      <div class="tip">
+        <b>Podpowiedzi dopasowują się do filtrów</b>
+        Gdy w zakładce leków włączysz przełącznik „Pokaż tylko leki refundowane", podpowiedzi zawężą się wyłącznie do leków z listy refundacyjnej — nie zaproponują nazwy, której i tak nie zobaczysz w wynikach.
+      </div>
     </div>
   </section>
 
   <section id="sortowanie">
-    <h2><span class="num">04</span> Sortowanie i filtrowanie wyników</h2>
+    <h2><span class="num">06</span> Sortowanie i filtrowanie wyników</h2>
     <div class="panel">
-      <p>Pole <strong>„Sortuj:"</strong> nad wynikami pozwala uporządkować listę, a część opcji dodatkowo <strong>zawęża</strong> wyniki do konkretnej grupy leków — działa wtedy nawet bez wpisywania czegokolwiek w pola wyszukiwania, pokazując od razu pełną listę danej kategorii.</p>
+      <p>Pole <strong>„Sortuj:"</strong> nad wynikami pozwala uporządkować listę, a część opcji dodatkowo <strong>zawęża</strong> wyniki do konkretnej grupy — działa wtedy nawet bez wpisywania czegokolwiek w pola wyszukiwania, pokazując od razu pełną listę danej kategorii.</p>
 
       <ul class="sort-list">
         <li>Dopłata: od najniższej <span class="desc">domyślne — najtańsze na górze</span></li>
         <li>Dopłata: od najwyższej <span class="desc">najdroższe na górze</span></li>
-        <li>Nazwa leku (A–Z) <span class="desc">porządek alfabetyczny</span></li>
-        <li>Dzieci do 18 r.ż. (DZ) <span class="desc">wykaz D1</span></li>
-        <li>Seniorzy od 65 r.ż. (S) <span class="desc">wykaz D2</span></li>
-        <li>Kobiety w ciąży (C) <span class="desc">wykaz E</span></li>
+        <li>Nazwa (A–Z) <span class="desc">porządek alfabetyczny</span></li>
+        <li>Dzieci do 18 r.ż. (DZ) <span class="desc">tylko leki, wykaz D1</span></li>
+        <li>Seniorzy od 65 r.ż. (S) <span class="desc">tylko leki, wykaz D2</span></li>
+        <li>Kobiety w ciąży (C) <span class="desc">tylko leki, wykaz E</span></li>
       </ul>
 
-      <div class="tip">
-        <b>Przykład zastosowania</b>
-        Wybierz „Dzieci do 18 r.ż. (DZ)" bez wpisywania niczego w pola wyszukiwania, aby zobaczyć pełną listę leków bezpłatnych dla tej grupy pacjentów.
-      </div>
+      <p>Trzy ostatnie opcje pojawiają się <strong>wyłącznie w zakładce leków</strong> — w środkach spożywczych i wyrobach medycznych nie mają zastosowania.</p>
 
       <h3>Przełącznik: pokaż tylko leki refundowane</h3>
-      <p>Nad polem sortowania znajduje się osobny przełącznik:</p>
+      <p>Nad polem sortowania (w zakładce leków) znajduje się osobny przełącznik:</p>
       <div class="toggle-demo-row">
         <span class="toggle-demo"><span class="track"></span><span class="knob"></span></span>
         <span class="toggle-demo-label">Pokaż tylko leki refundowane</span>
       </div>
-      <p>W odróżnieniu od opcji sortowania, ten przełącznik <strong>utrzymuje swój stan</strong> — raz włączony, ogranicza wyniki do leków znajdujących się na liście obwieszczenia refundacyjnego niezależnie od tego, co wpiszesz w pola wyszukiwania czy jak posortujesz wyniki, dopóki go nie wyłączysz. Możesz go łączyć z sortowaniem — np. włączyć przełącznik i dodatkowo wybrać sortowanie po dopłacie.</p>
+      <p>W odróżnieniu od opcji sortowania, ten przełącznik <strong>utrzymuje swój stan</strong> — raz włączony, ogranicza wyniki do leków znajdujących się na liście obwieszczenia refundacyjnego niezależnie od tego, co wpiszesz w pola wyszukiwania czy jak posortujesz wyniki, dopóki go nie wyłączysz. Możesz go łączyć z sortowaniem.</p>
     </div>
   </section>
 
   <section id="karta-wyniku">
-    <h2><span class="num">05</span> Jak czytać kartę wyniku</h2>
+    <h2><span class="num">07</span> Jak czytać kartę wyniku</h2>
     <div class="panel">
       <p>Każdy wynik wyszukiwania pokazuje się jako osobna karta z kilkoma sekcjami:</p>
 
       <h3>Nagłówek karty</h3>
       <div class="mock">
-        <div class="row"><span class="k">Nazwa leku</span><span class="v">Adeksa, tabl., 100 mg</span></div>
+        <div class="row"><span class="k">Nazwa</span><span class="v">Adeksa, tabl., 100 mg</span></div>
         <div class="row"><span class="k">Wielkość opakowania</span><span class="v">30 szt.</span></div>
         <div class="row"><span class="k">Poziom odpłatności</span><span class="v">30%</span></div>
         <div class="row"><span class="k">Dopłata pacjenta</span><span class="v">5,15 zł</span></div>
       </div>
-      <p>Po prawej stronie nagłówka zawsze widać poziom odpłatności i dopłatę pacjenta — to najszybszy sposób na porównanie kosztu.</p>
+      <p>Po prawej stronie nagłówka zawsze widać poziom odpłatności i dopłatę pacjenta (w złotych) — to najszybszy sposób na porównanie kosztu. Pod nazwą, w zależności od kategorii, pokazywana jest <strong>substancja czynna</strong> (leki) albo <strong>grupa limitowa</strong> (środki spożywcze i wyroby medyczne).</p>
 
-      <h3>Wykazy bezpłatnego zaopatrzenia</h3>
-      <p>Pod nagłówkiem znajdują się trzy oznaczenia pokazujące, czy dany lek jest bezpłatny dla wybranych grup pacjentów:</p>
+      <h3>Wykazy bezpłatnego zaopatrzenia (tylko leki)</h3>
+      <p>W zakładce leków pod nagłówkiem znajdują się trzy oznaczenia pokazujące, czy dany lek jest bezpłatny dla wybranych grup pacjentów:</p>
       <p>
         <span class="chip-demo on">Dzieci do 18 r.ż. (DZ)</span>
         <span class="chip-demo off">Seniorzy od 65 r.ż. (S)</span>
@@ -311,32 +392,23 @@
         <tr><td>Seniorzy od 65 r.ż. (S)</td><td>Lek bezpłatny dla pacjentów, którzy ukończyli 65. rok życia</td></tr>
         <tr><td>Kobiety w ciąży (C)</td><td>Lek bezpłatny dla kobiet w ciąży</td></tr>
       </table>
+      <p>Zielony znaczek „✓" oznacza, że lek występuje w danym wykazie; wyszarzony „–" że nie występuje.</p>
 
       <h3>Uwagi</h3>
       <p>Jeśli dla danej pozycji istnieją dodatkowe zastrzeżenia (np. refundacja ograniczona do konkretnego wskazania w ramach wykazu dla seniorów), pojawią się w żółtym polu „Uwagi do refundacji" lub „Informacja" — zależnie od tego, czego dotyczą.</p>
 
       <h3>Rozwijane szczegóły wskazań</h3>
       <p>Pola <strong>„Zakres wskazań objętych refundacją"</strong> i <strong>„Wskazania pozarejestracyjne objęte refundacją"</strong> bywają bardzo długie (listy kodów ICD-10, szczegółowe opisy). Dlatego są domyślnie zwinięte — dotknij nagłówka pola, żeby rozwinąć pełną treść.</p>
-
-      <h3>Podgląd Charakterystyki Produktu Leczniczego (ChPL)</h3>
-      <p>Przy kartach leków, dla których dokument jest dostępny, znajduje się przycisk <strong>„Zobacz charakterystykę produktu (ChPL)"</strong>. Dotknięcie go otwiera oficjalny dokument ChPL wprost w aplikacji, w dedykowanym podglądzie PDF — bez przechodzenia do przeglądarki i bez zapisywania pliku na stałe w telefonie (dokument jest automatycznie usuwany po zamknięciu podglądu).</p>
-      <div class="warn">
-        <b>Ta funkcja wymaga połączenia z internetem</b>
-        Podgląd ChPL działa <strong>wyłącznie online</strong> — dokument jest pobierany dopiero
-        w chwili dotknięcia przycisku. W odróżnieniu od reszty aplikacji (wyszukiwarka działa
-        offline po wcześniejszym pobraniu bazy danych), bez połączenia z internetem podgląd
-        ChPL się nie otworzy.
-      </div>
     </div>
   </section>
 
   <section id="nierefundowane">
-    <h2><span class="num">06</span> Leki nierefundowane i zamienniki</h2>
+    <h2><span class="num">08</span> Leki nierefundowane i zamienniki</h2>
     <div class="panel">
-      <p>Oprócz leków z obwieszczenia refundacyjnego, aplikacja pokazuje też leki <strong>zarejestrowane, ale nierefundowane</strong> — pochodzące z Rejestru Produktów Leczniczych. Taka pozycja jest oznaczona w polu „Poziom odpłatności" jako <strong>100%</strong>, a pole „Dopłata pacjenta" pokazuje „brak danych", ponieważ rejestr ten nie zawiera informacji o cenach.</p>
+      <p>W zakładce leków, oprócz pozycji z obwieszczenia refundacyjnego, aplikacja pokazuje też leki <strong>zarejestrowane, ale nierefundowane</strong> — pochodzące z Rejestru Produktów Leczniczych. Taka pozycja ma w polu „Poziom odpłatności" wartość <strong>100%</strong>, a pole „Dopłata pacjenta" pokazuje „—", ponieważ rejestr ten nie zawiera informacji o cenach.</p>
 
       <div class="warn">
-        <b>Status pozwolenia</b>
+        <b>Status pozycji</b>
         Zielone pole „Informacja" pod nagłówkiem karty wyjaśnia dodatkowo status leku:
         <ul style="margin-top:8px">
           <li><strong>Lek nierefundowany</strong> — dane z RPL, pozwolenie na dopuszczenie do obrotu jest ważne.</li>
@@ -350,30 +422,57 @@
     </div>
   </section>
 
+  <section id="chpl">
+    <h2><span class="num">09</span> Charakterystyka produktu (ChPL)</h2>
+    <div class="panel">
+      <p>Przy kartach leków, dla których dokument jest dostępny, znajduje się przycisk <strong>„Zobacz charakterystykę produktu (ChPL)"</strong>. Dotknięcie go otwiera oficjalny dokument ChPL wprost w aplikacji, w dedykowanym podglądzie PDF — bez przechodzenia do przeglądarki i bez zapisywania pliku na stałe w telefonie (dokument jest automatycznie usuwany po zamknięciu podglądu).</p>
+
+      <h3>Powiększanie treści</h3>
+      <p>Dokumenty ChPL są gęsto zapisane, więc podgląd obsługuje powiększanie:</p>
+      <ul>
+        <li><strong>Uszczypnięcie dwoma palcami</strong> — płynne powiększanie i pomniejszanie.</li>
+        <li><strong>Dwukrotne dotknięcie</strong> — szybkie przełączenie między widokiem pełnej strony a powiększeniem.</li>
+        <li><strong>Przesuwanie palcem</strong> — gdy treść jest powiększona, możesz przesuwać ją w obrębie strony.</li>
+      </ul>
+      <p>Zwykłe przewijanie między stronami dokumentu działa jak zawsze, dopóki nie zaczniesz powiększać. Po powiększeniu strona jest wczytywana ponownie w wyższej jakości, żeby tekst pozostał ostry.</p>
+
+      <div class="warn">
+        <b>Ta funkcja wymaga połączenia z internetem</b>
+        Podgląd ChPL działa <strong>wyłącznie online</strong> — dokument jest pobierany dopiero
+        w chwili dotknięcia przycisku. W odróżnieniu od reszty aplikacji (wyszukiwarka działa
+        offline po wcześniejszym pobraniu bazy danych), bez połączenia z internetem podgląd
+        ChPL się nie otworzy.
+      </div>
+
+      <p>Nie wszystkie leki mają dostępny link do ChPL — przycisk pojawia się tylko tam, gdzie dokument jest dostępny w oficjalnym rejestrze albo został uzupełniony ręcznie. Charakterystyki nie dotyczą środków spożywczych ani wyrobów medycznych, więc w tych zakładkach przycisk nie występuje.</p>
+    </div>
+  </section>
+
   <section id="aktualizacje">
-    <h2><span class="num">07</span> Aktualizacja danych i praca offline</h2>
+    <h2><span class="num">10</span> Aktualizacja danych i praca offline</h2>
     <div class="panel">
       <ol class="steps">
-        <li>Przy każdym uruchomieniu aplikacja automatycznie sprawdza w tle, czy dostępna jest nowsza wersja bazy danych.</li>
+        <li>Przy każdym uruchomieniu aplikacja automatycznie sprawdza w tle, czy dostępna jest nowsza wersja bazy danych — dla wszystkich trzech kategorii.</li>
         <li>Jeśli tak — pobiera ją i aktualizuje wyniki, o czym poinformuje krótki komunikat statusu pod polami wyszukiwania.</li>
-        <li>Jeśli nie masz połączenia z internetem, aplikacja używa ostatnio zapisanej wersji danych — działa więc w pełni offline.</li>
+        <li>Jeśli nie masz połączenia z internetem, aplikacja używa ostatnio zapisanej wersji danych — wyszukiwarka działa więc w pełni offline we wszystkich kategoriach.</li>
       </ol>
       <p>Datę aktualności bazy zobaczysz zawsze nad wynikami: „Baza danych z dnia: …". Możesz też ręcznie wymusić sprawdzenie aktualizacji przyciskiem <strong>„↻ Sprawdź aktualizację"</strong>.</p>
+      <p>W nagłówku aplikacji widnieje dodatkowo data <strong>obwieszczenia Ministra Zdrowia</strong>, na którym oparta jest baza — zmienia się ono raz na kwartał.</p>
     </div>
   </section>
 
   <section id="pomoc">
-    <h2><span class="num">08</span> Pomoc i zgłaszanie błędów</h2>
+    <h2><span class="num">11</span> Pomoc i zgłaszanie błędów</h2>
     <div class="panel">
-      <p>Napotkałeś błąd w działaniu aplikacji albo w danych o konkretnym leku? Skorzystaj z przycisku <strong>„Pomoc"</strong> w prawym górnym rogu aplikacji — przeniesie Cię on do strony wsparcia, gdzie znajdziesz najczęstsze pytania oraz formularz kontaktowy.</p>
-      <p>Obok przycisku „Pomoc" znajduje się też ikona <strong>„Instrukcja"</strong> — prowadzi bezpośrednio do tego podręcznika, więc zawsze masz go pod ręką w aplikacji.</p>
+      <p>Napotkałeś błąd w działaniu aplikacji albo w danych o konkretnej pozycji? Skorzystaj z przycisku <strong>„Pomoc"</strong> w górnej części ekranu — przeniesie Cię on do strony wsparcia, gdzie znajdziesz najczęstsze pytania oraz formularz kontaktowy.</p>
+      <p>Obok znajduje się też przycisk <strong>„Instrukcja"</strong> — prowadzi bezpośrednio do tego podręcznika, więc zawsze masz go pod ręką w aplikacji.</p>
       <p>Informacje o tym, jakie dane aplikacja przetwarza (i że nie zbiera żadnych danych osobowych), znajdziesz w Polityce prywatności, dostępnej w stopce ekranu głównego.</p>
     </div>
     <a href="#" class="backtotop" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">↑ Powrót na górę</a>
   </section>
 
   <footer>
-    RefundLek — narzędzie pomocnicze do wyszukiwania leków refundowanych.<br>
+    RefundLek — narzędzie pomocnicze do wyszukiwania wykazu refundacyjnego.<br>
     Dane pochodzą z obwieszczeń Ministra Zdrowia oraz Rejestru Produktów Leczniczych i mają charakter informacyjny.<br>
     <a href="https://tomaszmacioch.github.io/support/">Pomoc techniczna</a> ·
     <a href="https://tomaszmacioch.github.io/polityka_prywatnosci_RefundLek/">Polityka prywatności</a>
