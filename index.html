@@ -140,6 +140,10 @@
     font-size:11.5px;text-transform:uppercase;letter-spacing:.03em;border-bottom:2px solid var(--line)}
   table.legend-table td{padding:9px 10px;border-bottom:1px solid var(--line)}
   table.legend-table tr:last-child td{border-bottom:none}
+  @media(max-width:420px){
+    table.legend-table{font-size:12.5px}
+    table.legend-table th,table.legend-table td{padding:7px 6px;overflow-wrap:anywhere;-webkit-hyphens:auto;hyphens:auto}
+  }
 
   .steps{counter-reset:step;list-style:none;padding:0;margin:14px 0}
   .steps li{counter-increment:step;position:relative;padding-left:38px;margin-bottom:14px;
@@ -152,6 +156,56 @@
     text-decoration:none}
   .backtotop:hover{color:var(--petrol)}
 
+  /* Strona tytułowa — odwzorowanie */
+  .start-demo{background:linear-gradient(180deg,#fff,#eaf2fe);border:1px solid var(--line);border-radius:14px;
+    padding:18px 16px 14px;margin:14px 0;text-align:center}
+  .start-demo .nazwa{font-size:24px;font-weight:700;letter-spacing:-.3px;margin:0 0 12px}
+  .start-demo .nazwa .a{color:#032463} .start-demo .nazwa .b{color:#3a9b53}
+  .start-btn{display:flex;align-items:center;gap:10px;max-width:340px;margin:0 auto 10px;padding:10px 14px;
+    border-radius:14px;color:#fff;text-align:left}
+  .start-btn b{display:block;font-size:14.5px} .start-btn span{font-size:12px;opacity:.9}
+  .start-btn.niebieski{background:linear-gradient(135deg,#2563c9,#0b3f95)}
+  .start-btn.zielony{background:linear-gradient(135deg,#46b264,#2b8443)}
+  .start-btn .strz{margin-left:auto;font-size:20px;opacity:.85}
+  .start-demo .stopka{font-size:11.5px;color:#5a6780;margin-top:8px;line-height:1.5}
+  .kropka{display:inline-block;width:8px;height:8px;border-radius:50%;background:#3a9b53;margin-right:5px;vertical-align:1px}
+  .home-demo{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;
+    background:linear-gradient(145deg,#2563c9,#0b3f95);color:#fff;vertical-align:middle;margin:0 4px}
+  .home-demo svg{width:18px;height:18px}
+
+  /* Plakietka „Polski produkt” */
+  .pl-demo{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:700;color:#c8102e;
+    background:#fff;border:1.5px solid #c8102e;padding:2px 9px 2px 6px;border-radius:999px;vertical-align:middle}
+  .pl-demo .flaga{width:16px;height:10px;border-radius:2px;background:linear-gradient(#fff 50%,#dc143c 50%);
+    box-shadow:inset 0 0 0 1px rgba(20,27,36,.25)}
+
+  /* Komunikat o wygasłym pozwoleniu */
+  .wyg-demo{background:#f4f5f7;border:1px solid var(--line);border-left:4px solid #8593a1;border-radius:8px;
+    padding:11px 14px;margin:14px 0;font-size:13.5px}
+  .wyg-demo .k{display:block;font-size:11.5px;font-weight:700;text-transform:uppercase;letter-spacing:.03em;color:#4a5866;margin-bottom:4px}
+  .sug-demo{background:#fff;border:1px solid var(--line);border-radius:8px;margin:12px 0;font-size:13.5px;overflow:hidden}
+  .sug-demo div{padding:7px 12px;border-bottom:1px solid var(--line)} .sug-demo div:last-child{border-bottom:none}
+  .sug-demo .tag{display:block;font-size:11.5px;color:#8593a1}
+
+  /* Kalkulator */
+  :root{--calc:#c96f1c;--calc-dk:#9a5212;--calc-bg:#fdf3e7}
+  h2 .num.calc{color:var(--calc)}
+  .calc-warn{margin:16px 0;padding:13px 16px;background:var(--calc-bg);border:1px solid #f0d9bd;
+    border-left:4px solid var(--calc);border-radius:8px;font-size:14px}
+  .calc-warn b{color:var(--calc-dk);display:block;font-size:11.5px;text-transform:uppercase;letter-spacing:.04em;margin-bottom:3px}
+  .k-karta-demo{border-radius:10px;padding:10px 14px;margin:10px 0;border:1.5px solid #a9d08e;background:#e4f1da}
+  .k-karta-demo.po{border-color:#c6e0b4;background:#f1f8ec}
+  .k-karta-demo .t{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.02em;color:#3d6b22}
+  .k-karta-demo .v{font-family:"IBM Plex Mono",monospace;font-size:20px;font-weight:700;margin-top:2px}
+  .k-karta-demo .v small{font-family:"IBM Plex Sans",sans-serif;font-size:13px;color:var(--ink-soft);font-weight:600}
+  .k-szukaj-demo{display:block;text-align:center;margin:10px 0;padding:9px 12px;border:3px solid #2563c9;
+    border-radius:10px;color:#0b3f95;font-weight:700;font-size:13.5px;background:#fff}
+  .kalk-filtr-demo{background:var(--calc-bg);border:1px solid #f0d9bd;border-left:4px solid var(--calc);
+    border-radius:10px;padding:10px 14px;margin:12px 0;font-size:13.5px}
+  .kalk-filtr-demo .k{display:block;font-size:11.5px;font-weight:700;text-transform:uppercase;color:var(--calc-dk)}
+  table.legend-table td.dr{font-size:12.5px;color:var(--ink-soft)}
+  .wersja{font-size:12.5px;color:var(--ink-soft);margin:14px 0 0}
+
   footer{margin-top:44px;font-size:12px;color:#8593a1;text-align:center;line-height:1.8}
   footer a{color:var(--petrol);text-decoration:none;font-weight:600}
   footer a:hover{text-decoration:underline}
@@ -160,9 +214,9 @@
 <body>
 <header class="top">
   <div class="wrap">
-    <p class="eyebrow">RefundLek · Wyszukiwarka wykazu refundacyjnego</p>
+    <p class="eyebrow">RefundLek · Wyszukiwarka wykazu refundacyjnego i kalkulatory</p>
     <h1>Instrukcja obsługi</h1>
-    <p>Pełny przewodnik po funkcjach aplikacji — jak szukać leków, środków spożywczych i wyrobów medycznych, jak czytać wyniki i co oznaczają poszczególne oznaczenia.</p>
+    <p>Pełny przewodnik po funkcjach aplikacji — jak szukać leków, środków spożywczych i wyrobów medycznych, jak czytać wyniki, co oznaczają poszczególne oznaczenia i jak korzystać z kalkulatora rotacji opioidów.</p>
   </div>
 </header>
 
@@ -170,7 +224,8 @@
   <div class="hero">
     <p class="intro">
       <strong>RefundLek</strong> pozwala szybko sprawdzić, czy lek jest refundowany, ile wynosi
-      dopłata pacjenta i czy istnieje refundowany odpowiednik. Działa na Androidzie i iOS,
+      dopłata pacjenta i czy istnieje refundowany odpowiednik. Dla lekarzy i farmaceutów zawiera
+      też <strong>kalkulator rotacji opioidów</strong>. Działa na Androidzie i iOS,
       nie wymaga rejestracji i może działać offline.
     </p>
     <div class="platforms">
@@ -190,13 +245,19 @@
       <li>Podgląd Charakterystyki Produktu Leczniczego (ChPL) w aplikacji</li>
       <li>Brak rejestracji i brak zbierania danych osobowych</li>
       <li>Działanie offline po pobraniu bazy</li>
+      <li>Oznaczenie „Polski produkt” (wykazy G1 i G2)</li>
+      <li>Kalkulator rotacji opioidów z przejściem do refundowanych preparatów</li>
     </ul>
+    <p class="wersja">Instrukcja dotyczy wersji <strong>4.03</strong> na Androida. Strona tytułowa
+      i kalkulatory są dostępne w wersji na Androida; na iPhonie aplikacja otwiera się od razu
+      wyszukiwarką.</p>
   </div>
 
   <nav class="toc">
     <p class="lbl">Spis treści</p>
     <ol>
       <li><a href="#czym-jest">Czym jest RefundLek</a></li>
+      <li><a href="#start">Strona tytułowa i poruszanie się po aplikacji</a></li>
       <li><a href="#kategorie">Trzy kategorie wyszukiwania</a></li>
       <li><a href="#leki">Wyszukiwanie leków</a></li>
       <li><a href="#srodki-wyroby">Środki spożywcze i wyroby medyczne</a></li>
@@ -205,6 +266,7 @@
       <li><a href="#karta-wyniku">Jak czytać kartę wyniku</a></li>
       <li><a href="#nierefundowane">Leki nierefundowane i zamienniki</a></li>
       <li><a href="#chpl">Charakterystyka produktu (ChPL)</a></li>
+      <li><a href="#kalkulator">Kalkulator rotacji opioidów</a></li>
       <li><a href="#aktualizacje">Aktualizacja danych i praca offline</a></li>
       <li><a href="#pomoc">Pomoc i zgłaszanie błędów</a></li>
     </ol>
@@ -215,7 +277,7 @@
     <div class="panel">
       <p>RefundLek to narzędzie do szybkiego sprawdzania, co jest refundowane w Polsce, ile wynosi dopłata pacjenta oraz jakie wskazania są objęte refundacją. Dane pochodzą z dwóch oficjalnych źródeł:</p>
       <ul>
-        <li><strong>Obwieszczenie Ministra Zdrowia</strong> w sprawie wykazu refundowanych leków, środków spożywczych specjalnego przeznaczenia żywieniowego oraz wyrobów medycznych — aktualizowane co kwartał. Datę obwieszczenia, na którym oparta jest baza, widzisz w nagłówku aplikacji.</li>
+        <li><strong>Obwieszczenie Ministra Zdrowia</strong> w sprawie wykazu refundowanych leków, środków spożywczych specjalnego przeznaczenia żywieniowego oraz wyrobów medycznych — aktualizowane co kwartał. Datę obwieszczenia, na którym oparta jest baza, widzisz na stronie tytułowej i w nagłówku wyszukiwarki.</li>
         <li><strong>Rejestr Produktów Leczniczych (RPL)</strong> — rejestr wszystkich leków dopuszczonych do obrotu w Polsce, dzięki któremu aplikacja rozpoznaje też leki <strong>nierefundowane</strong>, zamiast pokazywać przy nich brak wyników.</li>
       </ul>
       <div class="tip">
@@ -225,10 +287,34 @@
     </div>
   </section>
 
-  <section id="kategorie">
-    <h2><span class="num">02</span> Trzy kategorie wyszukiwania</h2>
+  <section id="start">
+    <h2><span class="num">02</span> Strona tytułowa i poruszanie się po aplikacji</h2>
     <div class="panel">
-      <p>Pod nagłówkiem aplikacji znajdują się trzy zakładki. Każda przeszukuje inny wykaz i ma <strong>własny sposób wyszukiwania</strong> — dopasowany do tego, jak nazywane są produkty w danej kategorii:</p>
+      <p>Po uruchomieniu aplikacji widzisz <strong>stronę tytułową</strong> z dwoma przyciskami:</p>
+      <div class="start-demo" aria-hidden="true">
+        <p class="nazwa"><span class="a">Refund</span><span class="b">Lek</span></p>
+        <div class="start-btn niebieski"><div><b>Wyszukiwarka leków</b><span>refundacja, odpłatności, ChPL</span></div><span class="strz">›</span></div>
+        <div class="start-btn zielony"><div><b>Kalkulatory</b><span>dla profesjonalistów</span></div><span class="strz">›</span></div>
+        <div class="stopka">Obwieszczenie MZ z dnia …<br><span class="kropka"></span>Baza danych z dnia: … · Dane są aktualne.</div>
+      </div>
+      <ul>
+        <li><strong>Wyszukiwarka leków</strong> — leki, środki spożywcze i wyroby medyczne z wykazu refundacyjnego (rozdziały 3–10).</li>
+        <li><strong>Kalkulatory</strong> — narzędzia dla lekarzy i farmaceutów; obecnie kalkulator rotacji opioidów (rozdział 11). Kolejne kalkulatory pojawią się w następnych wersjach.</li>
+      </ul>
+      <p>Na dole strony tytułowej widać datę obwieszczenia Ministra Zdrowia i stan bazy danych. Kolorowa kropka pokazuje stan: <strong>zielona</strong> — dane aktualne lub właśnie zaktualizowane, <strong>pomarańczowa</strong> — brak połączenia (aplikacja używa zapisanych danych) albo problem z pobraniem, <strong>szara</strong> — trwa wczytywanie albo sprawdzanie aktualizacji.</p>
+
+      <h3>Powrót na stronę tytułową</h3>
+      <p>W wyszukiwarce i w kalkulatorach, w prawym dolnym rogu ekranu, jest okrągły niebieski przycisk z domkiem <span class="home-demo" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11 12 4l9 7"/><path d="M5 10v10h14V10"/></svg></span>. Dotknięcie go przenosi na stronę tytułową. Przycisk chowa się, gdy przewijasz listę w dół albo wpisujesz tekst, i wraca, gdy przewiniesz w górę.</p>
+
+      <h3>Systemowy przycisk „Wstecz”</h3>
+      <p>Przycisk „Wstecz” telefonu cofa o jeden ekran — np. z wyników wyszukiwania otwartych z kalkulatora z powrotem do kalkulatora, z wpisanymi wcześniej danymi. Na stronie tytułowej „Wstecz” zamyka aplikację. Wyniki wyszukiwania i miejsce na liście są zachowywane, gdy wracasz do wyszukiwarki.</p>
+    </div>
+  </section>
+
+  <section id="kategorie">
+    <h2><span class="num">03</span> Trzy kategorie wyszukiwania</h2>
+    <div class="panel">
+      <p>Pod nagłówkiem wyszukiwarki znajdują się trzy zakładki. Każda przeszukuje inny wykaz i ma <strong>własny sposób wyszukiwania</strong> — dopasowany do tego, jak nazywane są produkty w danej kategorii:</p>
 
       <div class="tabs-demo">
         <div class="tab-demo active">Leki</div>
@@ -260,7 +346,7 @@
   </section>
 
   <section id="leki">
-    <h2><span class="num">03</span> Wyszukiwanie leków</h2>
+    <h2><span class="num">04</span> Wyszukiwanie leków</h2>
     <div class="panel">
       <p>W zakładce <strong>Leki</strong> dostępne są dwa pola:</p>
       <ul>
@@ -294,7 +380,7 @@
   </section>
 
   <section id="srodki-wyroby">
-    <h2><span class="num">04</span> Środki spożywcze i wyroby medyczne</h2>
+    <h2><span class="num">05</span> Środki spożywcze i wyroby medyczne</h2>
     <div class="panel">
       <p>Zakładki <strong>Środki spożywcze</strong> i <strong>Wyroby medyczne</strong> działają inaczej niż zakładka leków — zestaw pól jest dopasowany do tego, jak nazywane są produkty w tych wykazach.</p>
 
@@ -323,7 +409,7 @@
   </section>
 
   <section id="podpowiedzi">
-    <h2><span class="num">05</span> Podpowiedzi w trakcie pisania</h2>
+    <h2><span class="num">06</span> Podpowiedzi w trakcie pisania</h2>
     <div class="panel">
       <p>W trakcie wpisywania tekstu pod polem pojawia się lista pasujących nazw do wyboru:</p>
       <ul>
@@ -336,11 +422,19 @@
         <b>Podpowiedzi dopasowują się do filtrów</b>
         Gdy w zakładce leków włączysz przełącznik „Pokaż tylko leki refundowane", podpowiedzi zawężą się wyłącznie do leków z listy refundacyjnej — nie zaproponują nazwy, której i tak nie zobaczysz w wynikach.
       </div>
+
+      <h3>Leki bez ważnego pozwolenia w podpowiedziach</h3>
+      <p>Jeśli lek jest w Rejestrze Produktów Leczniczych, ale wszystkie jego pozwolenia na dopuszczenie do obrotu wygasły, podpowiedź ma szary dopisek:</p>
+      <div class="sug-demo" aria-hidden="true">
+        <div>Nazwa leku, Tabletki, 10 mg</div>
+        <div>Nazwa leku, Tabletki, 20 mg<span class="tag">bez ważnego dopuszczenia do obrotu</span></div>
+      </div>
+      <p>Po wybraniu takiej pozycji zobaczysz wyjaśnienie zamiast pustej listy wyników (zob. rozdział 9).</p>
     </div>
   </section>
 
   <section id="sortowanie">
-    <h2><span class="num">06</span> Sortowanie i filtrowanie wyników</h2>
+    <h2><span class="num">07</span> Sortowanie i filtrowanie wyników</h2>
     <div class="panel">
       <p>Pole <strong>„Sortuj:"</strong> nad wynikami pozwala uporządkować listę, a część opcji dodatkowo <strong>zawęża</strong> wyniki do konkretnej grupy — działa wtedy nawet bez wpisywania czegokolwiek w pola wyszukiwania, pokazując od razu pełną listę danej kategorii.</p>
 
@@ -351,9 +445,10 @@
         <li>Dzieci do 18 r.ż. (DZ) <span class="desc">tylko leki, wykaz D1</span></li>
         <li>Seniorzy od 65 r.ż. (S) <span class="desc">tylko leki, wykaz D2</span></li>
         <li>Kobiety w ciąży (C) <span class="desc">tylko leki, wykaz E</span></li>
+        <li>Polski produkt <span class="desc">tylko leki, wykazy G1 i G2</span></li>
       </ul>
 
-      <p>Trzy ostatnie opcje pojawiają się <strong>wyłącznie w zakładce leków</strong> — w środkach spożywczych i wyrobach medycznych nie mają zastosowania.</p>
+      <p>Cztery ostatnie opcje pojawiają się <strong>wyłącznie w zakładce leków</strong> — w środkach spożywczych i wyrobach medycznych nie mają zastosowania.</p>
 
       <h3>Przełącznik: pokaż tylko leki refundowane</h3>
       <p>Nad polem sortowania (w zakładce leków) znajduje się osobny przełącznik:</p>
@@ -366,7 +461,7 @@
   </section>
 
   <section id="karta-wyniku">
-    <h2><span class="num">07</span> Jak czytać kartę wyniku</h2>
+    <h2><span class="num">08</span> Jak czytać kartę wyniku</h2>
     <div class="panel">
       <p>Każdy wynik wyszukiwania pokazuje się jako osobna karta z kilkoma sekcjami:</p>
 
@@ -378,6 +473,14 @@
         <div class="row"><span class="k">Dopłata pacjenta</span><span class="v">5,15 zł</span></div>
       </div>
       <p>Po prawej stronie nagłówka zawsze widać poziom odpłatności i dopłatę pacjenta (w złotych) — to najszybszy sposób na porównanie kosztu. Pod nazwą, w zależności od kategorii, pokazywana jest <strong>substancja czynna</strong> (leki) albo <strong>grupa limitowa</strong> (środki spożywcze i wyroby medyczne).</p>
+
+      <h3>Plakietka „Polski produkt” (tylko leki)</h3>
+      <p>Leki z wykazów <strong>G1</strong> i <strong>G2</strong> załącznika do obwieszczenia mają pod nazwą biało-czerwoną plakietkę <span class="pl-demo"><span class="flaga"></span>Polski produkt</span>.</p>
+      <ul>
+        <li><strong>G1</strong> — lek wytwarzany w Polsce albo z wykorzystaniem substancji czynnej wytworzonej w Polsce.</li>
+        <li><strong>G2</strong> — lek wytwarzany w Polsce z wykorzystaniem substancji czynnej wytwarzanej w Polsce.</li>
+      </ul>
+      <p>Wszystkie takie leki zobaczysz naraz, wybierając w polu „Sortuj:” opcję <strong>Polski produkt</strong>. Jeśli zapisana w telefonie baza jest starsza niż ta funkcja, aplikacja poprosi o aktualizację danych.</p>
 
       <h3>Wykazy bezpłatnego zaopatrzenia (tylko leki)</h3>
       <p>W zakładce leków pod nagłówkiem znajdują się trzy oznaczenia pokazujące, czy dany lek jest bezpłatny dla wybranych grup pacjentów:</p>
@@ -403,7 +506,7 @@
   </section>
 
   <section id="nierefundowane">
-    <h2><span class="num">08</span> Leki nierefundowane i zamienniki</h2>
+    <h2><span class="num">09</span> Leki nierefundowane i zamienniki</h2>
     <div class="panel">
       <p>W zakładce leków, oprócz pozycji z obwieszczenia refundacyjnego, aplikacja pokazuje też leki <strong>zarejestrowane, ale nierefundowane</strong> — pochodzące z Rejestru Produktów Leczniczych. Taka pozycja ma w polu „Poziom odpłatności" wartość <strong>100%</strong>, a pole „Dopłata pacjenta" pokazuje „—", ponieważ rejestr ten nie zawiera informacji o cenach.</p>
 
@@ -415,7 +518,13 @@
           <li><strong>Status refundacji nieznany</strong> — rejestr nie zawiera danych o opakowaniu tego produktu, więc nie da się jednoznacznie potwierdzić statusu.</li>
         </ul>
       </div>
-      <p>Leki, których pozwolenie na dopuszczenie do obrotu wygasło, <strong>nie pojawiają się w wynikach wyszukiwania w ogóle</strong> — zostały celowo pominięte, ponieważ mogły przestać być legalnie dostępne w aptekach.</p>
+      <h3>Leki bez ważnego pozwolenia na dopuszczenie do obrotu</h3>
+      <p>Leki, których pozwolenie na dopuszczenie do obrotu wygasło, <strong>nie są pokazywane jako wyniki</strong> — mogły przestać być legalnie dostępne w aptekach. Zamiast pustej listy zobaczysz jednak wyjaśnienie:</p>
+      <div class="wyg-demo" aria-hidden="true">
+        <span class="k">Brak ważnego pozwolenia na dopuszczenie do obrotu</span>
+        Ten lek jest w Rejestrze Produktów Leczniczych, ale jego pozwolenie na dopuszczenie do obrotu w Polsce wygasło, dlatego nie ma go w wynikach wyszukiwania.
+      </div>
+      <p>Jeśli nazwa wygasłego leku jest początkiem nazwy innego leku z ważnym pozwoleniem (np. preparatu złożonego), komunikat pojawi się nad wynikami, a pod nim — pozycje z ważnym pozwoleniem. Leki, które mają przynajmniej jedno opakowanie z ważnym pozwoleniem, pokazywane są normalnie.</p>
 
       <h3>Podpowiedź refundowanych zamienników</h3>
       <p>Jeśli oglądany lek nie jest refundowany, ale jego substancja czynna występuje w innym, refundowanym produkcie (np. od innego producenta), pod informacją o statusie pojawi się niebiesko-zielone pole z listą takich zamienników — z gotową podpowiedzią, czego szukać zamiast wybranego leku.</p>
@@ -423,7 +532,7 @@
   </section>
 
   <section id="chpl">
-    <h2><span class="num">09</span> Charakterystyka produktu (ChPL)</h2>
+    <h2><span class="num">10</span> Charakterystyka produktu (ChPL)</h2>
     <div class="panel">
       <p>Przy kartach leków, dla których dokument jest dostępny, znajduje się przycisk <strong>„Zobacz charakterystykę produktu (ChPL)"</strong>. Dotknięcie go otwiera oficjalny dokument ChPL wprost w aplikacji, w dedykowanym podglądzie PDF — bez przechodzenia do przeglądarki i bez zapisywania pliku na stałe w telefonie (dokument jest automatycznie usuwany po zamknięciu podglądu).</p>
 
@@ -448,32 +557,95 @@
     </div>
   </section>
 
+  <section id="kalkulator">
+    <h2><span class="num calc">11</span> Kalkulator rotacji opioidów</h2>
+    <div class="panel">
+      <p>Kalkulator przelicza <strong>dawki ekwiwalentne</strong> przy zmianie opioidu albo drogi podania. Otwierasz go ze strony tytułowej: <strong>Kalkulatory → Rotacja opioidów</strong>.</p>
+      <div class="calc-warn">
+        <b>Narzędzie dla profesjonalistów</b>
+        Kalkulator jest narzędziem pomocniczym dla lekarzy i farmaceutów. Przeliczniki z wytycznych (PTBB 2017, EAPC 2012, Opioids Aware i in.) mają charakter przybliżony. Wynik jest <strong>obliczeniowy (zakres)</strong> i nie zawiera zaleceń dotyczących sposobu zmiany leku — dawkę i sposób zmiany ustala lekarz.
+      </div>
+      <p>Przy pierwszym wejściu aplikacja wyświetla okno „Kalkulator dla profesjonalistów” z tą informacją. Po dotknięciu <strong>„Rozumiem”</strong> okno nie będzie się już pojawiać; „Wróć” zamyka okno i wraca do listy kalkulatorów.</p>
+
+      <h3>Krok 1 — Obecne leczenie</h3>
+      <ul>
+        <li><strong>Dawka stała</strong> — opioid, droga podania, dawka i liczba podań na dobę. Dla plastra wpisujesz dawkę w µg/h (jedną z dawek plastrów dostępnych w Polsce).</li>
+        <li><strong>Dawka ratunkowa</strong> (ostatnia doba, opcjonalnie) — opioid, droga podania, dawka jednorazowa i liczba dawek w ostatniej dobie. Domyślnie ustawione jest „— brak —”. Plaster nie może być dawką ratunkową.</li>
+      </ul>
+      <p>Obie części są przeliczane osobno i sumowane. W polach liczbowych można używać przecinka dziesiętnego.</p>
+
+      <h3>Krok 2 — Nowy opioid</h3>
+      <ul>
+        <li><strong>Opioid</strong> i <strong>droga podania</strong> — listy pokazują tylko dozwolone połączenia.</li>
+        <li><strong>Redukcja dawki</strong> — domyślnie <em>Automatyczna (zakres)</em>: 25–50% przy zmianie na inny opioid; 50–75% przy czynnikach ryzyka albo przy dawce ≥ 500 mg morfiny doustnej na dobę. Można też wybrać „brak” albo jedną wartość: 10, 25, 30, 50 lub 75%.</li>
+        <li>Pola wyboru <strong>„Wiek podeszły / wyniszczenie / niewydolność narządowa”</strong> i <strong>„Zmiana z powodu działań niepożądanych”</strong> — czynniki ryzyka, które zwiększają redukcję w trybie automatycznym (przy tym samym leku z inną drogą podania obniżają dolną granicę zakresu).</li>
+      </ul>
+
+      <h3>Krok 3 — Wynik</h3>
+      <p>Wynik pojawia się od razu, w dwóch kartach:</p>
+      <div class="k-karta-demo" aria-hidden="true"><div class="t">Dawka ekwianalgetyczna (bez redukcji)</div><div class="v">30 – 40 <small>mg/24 h</small></div></div>
+      <div class="k-karta-demo po" aria-hidden="true"><div class="t">Orientacyjna dawka początkowa (po redukcji)</div><div class="v">15 – 30 <small>mg/24 h</small></div></div>
+      <p style="font-size:12.5px;color:var(--ink-soft)">Przykład: morfina doustnie 30 mg × 2 na dobę → oksykodon doustnie, redukcja automatyczna.</p>
+      <ul>
+        <li>Wynik ma postać <strong>zakresu</strong> — odzwierciedla rozrzut przeliczników w źródłach i przyjęty zakres redukcji.</li>
+        <li>Gdy wybrano redukcję „brak”, karta „po redukcji” pokazuje <strong>NIE DOTYCZY</strong>.</li>
+        <li><strong>Plastry</strong> — wynik w µg/h, zaokrąglony w dół do dawek możliwych do uzyskania z plastrów zarejestrowanych w Polsce (fentanyl: wielokrotności 12,5 µg/h; buprenorfina: 35–140 µg/h). Gdy potrzebny jest więcej niż jeden plaster — zielona uwaga i skład. Gdy żadna moc plastra nie mieści się w zakresie — czerwona uwaga (nie dzielić plastra; konieczna odrębna decyzja kliniczna).</li>
+        <li><strong>Metadon i lewometadon jako nowy lek</strong> — przelicznik zależny od dawki (schemat Mercadante 2001), bez redukcji.</li>
+      </ul>
+      <p>Pod wynikiem są zwijane sekcje <strong>„Zasady obliczeń”</strong> (pełny opis reguł) oraz <strong>„Przeliczniki i źródła”</strong> (tabela przeliczników z odnośnikami do wytycznych). Przycisk <strong>„Wyczyść”</strong> usuwa wpisane dane.</p>
+
+      <h3>Opioidy i drogi podania w kalkulatorze</h3>
+      <table class="legend-table">
+        <tr><th>Opioid</th><th>Drogi podania</th></tr>
+        <tr><td>Morfina</td><td class="dr">doustnie, podskórnie, dożylnie, domięśniowo</td></tr>
+        <tr><td>Oksykodon</td><td class="dr">doustnie, podskórnie, dożylnie</td></tr>
+        <tr><td>Fentanyl</td><td class="dr">plaster, podskórnie, dożylnie; podjęzykowo, podpoliczkowo, donosowo — tylko jako obecna dawka ratunkowa</td></tr>
+        <tr><td>Buprenorfina</td><td class="dr">plaster, domięśniowo, dożylnie; podjęzykowo — tylko jako obecny lek</td></tr>
+        <tr><td>Metadon, lewometadon</td><td class="dr">doustnie</td></tr>
+        <tr><td>Tapentadol</td><td class="dr">doustnie</td></tr>
+        <tr><td>Tramadol</td><td class="dr">doustnie, dożylnie, domięśniowo, podskórnie</td></tr>
+        <tr><td>Kodeina, dihydrokodeina</td><td class="dr">doustnie</td></tr>
+        <tr><td>Nalbufina</td><td class="dr">domięśniowo, dożylnie, podskórnie</td></tr>
+      </table>
+      <p>Preparaty złożone liczy się według składnika opioidowego (np. oksykodon z naloksonem → oksykodon, tramadol z paracetamolem → tramadol).</p>
+
+      <h3>Przycisk „Pokaż preparaty”</h3>
+      <p>Pod wynikiem znajduje się przycisk prowadzący do wyszukiwarki:</p>
+      <div class="k-szukaj-demo" aria-hidden="true">Pokaż preparaty: oksykodon doustnie – refundowane w Polsce</div>
+      <p>Otwiera on wyszukiwarkę z preparatami nowego leku w wybranej postaci — <strong>refundowanymi</strong>, a gdy takich nie ma, ze wszystkimi zarejestrowanymi w Polsce. Nad wynikami pojawia się ramka:</p>
+      <div class="kalk-filtr-demo" aria-hidden="true"><span class="k">Z kalkulatora rotacji opioidów</span><b>oksykodon doustnie</b> · Preparaty refundowane: …</div>
+      <p>Kalkulator nie wskazuje konkretnego preparatu. Przycisk <strong>„Zamknij filtr”</strong> (albo zmiana wpisu w polu wyszukiwania) wyłącza filtr. Systemowe „Wstecz” wraca do kalkulatora z wpisanymi danymi.</p>
+    </div>
+  </section>
+
   <section id="aktualizacje">
-    <h2><span class="num">10</span> Aktualizacja danych i praca offline</h2>
+    <h2><span class="num">12</span> Aktualizacja danych i praca offline</h2>
     <div class="panel">
       <ol class="steps">
         <li>Przy każdym uruchomieniu aplikacja automatycznie sprawdza w tle, czy dostępna jest nowsza wersja bazy danych — dla wszystkich trzech kategorii.</li>
-        <li>Jeśli tak — pobiera ją i aktualizuje wyniki, o czym poinformuje krótki komunikat statusu pod polami wyszukiwania.</li>
+        <li>Jeśli tak — pobiera ją i aktualizuje wyniki, o czym poinformuje krótki komunikat statusu (na stronie tytułowej i pod polami wyszukiwania).</li>
         <li>Jeśli nie masz połączenia z internetem, aplikacja używa ostatnio zapisanej wersji danych — wyszukiwarka działa więc w pełni offline we wszystkich kategoriach.</li>
       </ol>
       <p>Datę aktualności bazy zobaczysz zawsze nad wynikami: „Baza danych z dnia: …". Możesz też ręcznie wymusić sprawdzenie aktualizacji przyciskiem <strong>„↻ Sprawdź aktualizację"</strong>.</p>
-      <p>W nagłówku aplikacji widnieje dodatkowo data <strong>obwieszczenia Ministra Zdrowia</strong>, na którym oparta jest baza — zmienia się ono raz na kwartał.</p>
+      <p>Na stronie tytułowej i w nagłówku wyszukiwarki widnieje dodatkowo data <strong>obwieszczenia Ministra Zdrowia</strong>, na którym oparta jest baza — zmienia się ono raz na kwartał.</p>
+      <p>Kalkulator rotacji opioidów działa w pełni offline (przeliczniki są wbudowane w aplikację); przycisk „Pokaż preparaty” korzysta z zapisanej bazy wyszukiwarki.</p>
     </div>
   </section>
 
   <section id="pomoc">
-    <h2><span class="num">11</span> Pomoc i zgłaszanie błędów</h2>
+    <h2><span class="num">13</span> Pomoc i zgłaszanie błędów</h2>
     <div class="panel">
-      <p>Napotkałeś błąd w działaniu aplikacji albo w danych o konkretnej pozycji? Skorzystaj z przycisku <strong>„Pomoc"</strong> w górnej części ekranu — przeniesie Cię on do strony wsparcia, gdzie znajdziesz najczęstsze pytania oraz formularz kontaktowy.</p>
+      <p>Napotkałeś błąd w działaniu aplikacji albo w danych o konkretnej pozycji? Skorzystaj z przycisku <strong>„Pomoc"</strong> w górnej części ekranu wyszukiwarki — przeniesie Cię on do strony wsparcia, gdzie znajdziesz najczęstsze pytania oraz formularz kontaktowy.</p>
       <p>Obok znajduje się też przycisk <strong>„Instrukcja"</strong> — prowadzi bezpośrednio do tego podręcznika, więc zawsze masz go pod ręką w aplikacji.</p>
-      <p>Informacje o tym, jakie dane aplikacja przetwarza (i że nie zbiera żadnych danych osobowych), znajdziesz w Polityce prywatności, dostępnej w stopce ekranu głównego.</p>
+      <p>Informacje o tym, jakie dane aplikacja przetwarza (i że nie zbiera żadnych danych osobowych), znajdziesz w Polityce prywatności, dostępnej w stopce wyszukiwarki. Jedyna informacja zapisywana przez kalkulator w telefonie to zapamiętanie, że okno „Kalkulator dla profesjonalistów” zostało już potwierdzone.</p>
     </div>
     <a href="#" class="backtotop" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">↑ Powrót na górę</a>
   </section>
 
   <footer>
-    RefundLek — narzędzie pomocnicze do wyszukiwania wykazu refundacyjnego.<br>
+    RefundLek — narzędzie pomocnicze do wyszukiwania wykazu refundacyjnego. Instrukcja dla wersji 4.03.<br>
     Dane pochodzą z obwieszczeń Ministra Zdrowia oraz Rejestru Produktów Leczniczych i mają charakter informacyjny.<br>
+    Kalkulator rotacji opioidów jest narzędziem pomocniczym dla profesjonalistów; wynik ma charakter obliczeniowy.<br>
     <a href="https://tomaszmacioch.github.io/support/">Pomoc techniczna</a> ·
     <a href="https://tomaszmacioch.github.io/polityka_prywatnosci_RefundLek/">Polityka prywatności</a>
   </footer>
